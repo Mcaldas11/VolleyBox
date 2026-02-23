@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AIQuickPromptResource" load_steps=2 format=3 uid="uid://e84kfndwopyr"]
+
+[ext_resource type="Script" uid="uid://cpuooocr7mmgv" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="1_a4812"]
+
+[resource]
+script = ExtResource("1_a4812")
+action_name = "Code It"
+action_prompt = "Code what is missing here
+```gdscript
+{CODE}
+```
+
+Don´t modify any other parts of the code.,
+
+"
+metadata/_custom_type_script = "uid://cpuooocr7mmgv"

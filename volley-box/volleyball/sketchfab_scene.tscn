@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://meqvp2syms1m"]
+
+[ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r2oem"]
+[ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_svyu1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svyu1"]
+size = Vector3(18.742569, 0.72101414, 30.997082)
+
+[sub_resource type="GDScript" id="GDScript_svyu1"]
+script/source = "extends CharacterBody3D
+
+@export var speed = 6.0
+@export var jump_velocity = 4.5
+
+var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
+
+func _physics_process(delta):
+
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = jump_velocity
+
+	var input_dir = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
+
+	move_and_slide()
+"
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_r2oem")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09595485, -0.13949297, -0.898885)
+shape = SubResource("BoxShape3D_svyu1")
+
+[node name="Player" parent="." index="1" instance=ExtResource("2_svyu1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012796402, 1.0242662, 6.454096)
+script = SubResource("GDScript_svyu1")

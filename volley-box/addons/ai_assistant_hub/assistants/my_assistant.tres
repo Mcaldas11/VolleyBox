@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AIAssistantResource" load_steps=7 format=3 uid="uid://dd3tcc607h3mr"]
+
+[ext_resource type="Script" uid="uid://cpuooocr7mmgv" path="res://addons/ai_assistant_hub/quick_prompts/ai_quick_prompt_resource.gd" id="1_tsdrn"]
+[ext_resource type="Resource" uid="uid://5cq7r7mc10qx" path="res://addons/ai_assistant_hub/quick_prompts/code_review.tres" id="2_0krlc"]
+[ext_resource type="Script" uid="uid://bjwmrbcaoqyt2" path="res://addons/ai_assistant_hub/assistants/ai_assistant_resource.gd" id="2_k8w65"]
+[ext_resource type="Resource" uid="uid://e84kfndwopyr" path="res://addons/ai_assistant_hub/quick_prompts/code_it.tres" id="3_wbkix"]
+[ext_resource type="Texture2D" uid="uid://qjvopjqelt0m" path="res://addons/ai_assistant_hub/graphics/icons/linear_32_3dmsicons.png" id="5_vqvqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qile4"]
+atlas = ExtResource("5_vqvqq")
+region = Rect2(33.909714, 927.7999, 29.040009, 32.669983)
+
+[resource]
+script = ExtResource("2_k8w65")
+type_name = "Coder Senior"
+type_icon = SubResource("AtlasTexture_qile4")
+ai_model = "deepseek-coder-v2:latest"
+ai_description = "You are a useful Godot AI assistant. You responde in a concise manner and you can write high quality GDScript code for Godot4. You are chatting with an experienced developer and every code request you receive is for GDScript and you can also work in the mapof the game preparing collisions and animations."
+quick_prompts = Array[ExtResource("1_tsdrn")]([ExtResource("2_0krlc"), ExtResource("3_wbkix")])
+metadata/_custom_type_script = "uid://bjwmrbcaoqyt2"
