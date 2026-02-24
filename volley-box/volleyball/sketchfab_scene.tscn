@@ -44,5 +44,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09595485, -0.13949297, -0.8
 shape = SubResource("BoxShape3D_svyu1")
 
 [node name="Player" parent="." index="1" instance=ExtResource("2_svyu1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012796402, 1.0242662, 6.454096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012796402, 1.0242662, 9.96473)
 script = SubResource("GDScript_svyu1")
