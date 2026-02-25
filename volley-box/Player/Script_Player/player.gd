@@ -44,7 +44,7 @@ func _input(event):
 
 			get_tree().current_scene.add_child(current_ball)
 
-			current_ball.global_transform.origin = spawn_point.global_transform.origin
+			current_ball.global_transform.origin = global_transform.origin + Vector3(0, 4, 0)
 
 
 	# REMATAR COM BOTÃO ESQUERDO
