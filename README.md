@@ -51,8 +51,6 @@ This project uses a downloaded volleyball field model:
 
 - 🏟️ Volleyball Court 3D model (credit/source): https://skfb.ly/oIyZA
 
-If you’d like, I can format this section to match the exact license/attribution text required by the asset’s author/license once you paste it here (Sketchfab models often have specific attribution requirements). 📄✅
-
 ---
 
 ## 🗺️ Roadmap (High-Level)
