@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl1rd8yq4viql"]
+[gd_scene load_steps=8 format=3 uid="uid://dl1rd8yq4viql"]
 
 [ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
 [ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
@@ -17,6 +17,8 @@ size = Vector3(18.997292, 0.72650146, 31.10749)
 top_radius = 0.02
 bottom_radius = 0.02
 height = 1.8
+
+[sub_resource type="Environment" id="Environment_r886b"]
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_r886b")]
 
@@ -88,3 +90,6 @@ mesh = SubResource("CylinderMesh_r886b")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2439833, 2.2612882, -0.009531736)
 mesh = SubResource("CylinderMesh_r886b")
 skeleton = NodePath("../../Vareta2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
+environment = SubResource("Environment_r886b")
