@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl1rd8yq4viql"]
+
+[ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
+[ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r886b"]
+size = Vector3(18.997292, 0.72650146, 31.10749)
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_r886b")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024425477, -0.13674925, -0.9748182)
+shape = SubResource("BoxShape3D_r886b")
+
+[node name="Player" parent="." index="1" instance=ExtResource("2_alxkw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
+speed = 6.0
+jump_velocity = 4.5
+mouse_sensitivity = 0.002
