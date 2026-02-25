@@ -1,4 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csnwley7mf18u"]
+[gd_scene load_steps=6 format=3 uid="uid://csnwley7mf18u"]
+
+[ext_resource type="Script" uid="uid://b5anttr8te2kn" path="res://assets/ball/ball.gd" id="1_0hqb1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v74v5"]
+bounce = 0.7
 
 [sub_resource type="SphereMesh" id="SphereMesh_v74v5"]
 
@@ -10,8 +15,10 @@ radius = 0.21046026
 
 [node name="RigidBody3D" type="RigidBody3D"]
 mass = 0.3
+physics_material_override = SubResource("PhysicsMaterial_v74v5")
 linear_damp = 0.1
 angular_damp = 0.1
+script = ExtResource("1_0hqb1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
