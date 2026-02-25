@@ -2,8 +2,28 @@ extends CharacterBody3D
 
 @export var speed = 6.0
 @export var jump_velocity = 4.5
+@export var mouse_sensitivity = 0.002
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var camera_x_rotation = 0.0
+
+@onready var camera_pivot = $CameraPivot
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		print("mouse moving")
+		# roda o player esquerda/direita
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		
+		# roda a câmera cima/baixo
+		camera_x_rotation -= event.relative.y * mouse_sensitivity
+		camera_x_rotation = clamp(camera_x_rotation, -1.2, 1.2)
+		
+		camera_pivot.rotation.x = camera_x_rotation
+
 
 func _physics_process(delta):
 
