@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csnwley7mf18u"]
+
+[ext_resource type="PackedScene" uid="uid://vvoa28byhwkp" path="res://assets/ball/volleyball.glb" id="1_0hqb1"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_0hqb1")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, 0, 0, 0)
