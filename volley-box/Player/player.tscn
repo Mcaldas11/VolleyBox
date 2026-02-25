@@ -24,3 +24,6 @@ mesh = SubResource("CapsuleMesh_insbl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.775, 0)
 current = true
 fov = 65.0
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1164161, -0.6784137)

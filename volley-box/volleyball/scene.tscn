@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl1rd8yq4viql"]
+[gd_scene load_steps=9 format=3 uid="uid://dl1rd8yq4viql"]
 
 [ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
 [ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
+[ext_resource type="PackedScene" uid="uid://csnwley7mf18u" path="res://assets/ball/ball.tscn" id="3_alxkw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alxkw"]
 size = Vector3(9.000488, 1.0292969, 0.012084961)
@@ -59,6 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
 speed = 6.0
 jump_velocity = 4.5
 mouse_sensitivity = 0.002
+ball_scene = ExtResource("3_alxkw")
 
 [node name="CrossHair" type="CanvasLayer" parent="." index="2"]
 

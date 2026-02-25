@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://csnwley7mf18u"]
+[gd_scene load_steps=3 format=3 uid="uid://csnwley7mf18u"]
 
 [ext_resource type="PackedScene" uid="uid://vvoa28byhwkp" path="res://assets/ball/ball.glb" id="1_0hqb1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0hqb1"]
+radius = 0.39802745
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_0hqb1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, 0.3, 0, -0.3, -1.3113417e-08, 0, 0, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="1"]
+shape = SubResource("SphereShape3D_0hqb1")
