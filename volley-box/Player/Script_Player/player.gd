@@ -14,7 +14,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		print("mouse moving")
+
 		# roda o player esquerda/direita
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		
