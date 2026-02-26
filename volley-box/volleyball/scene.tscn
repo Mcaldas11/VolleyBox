@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dl1rd8yq4viql"]
+[gd_scene load_steps=11 format=3 uid="uid://dl1rd8yq4viql"]
 
 [ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
 [ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
@@ -20,6 +20,12 @@ bottom_radius = 0.02
 height = 1.8
 
 [sub_resource type="Environment" id="Environment_r886b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wedp3"]
+size = Vector3(18.98407, 7.6748047, 0.09082031)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfae8"]
+size = Vector3(0.24647167, 7.6280518, 31.015198)
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_r886b")]
 
@@ -95,3 +101,29 @@ skeleton = NodePath("../../Vareta2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
 environment = SubResource("Environment_r886b")
+
+[node name="parede costas" type="StaticBody3D" parent="." index="6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede costas" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 3.3374023, 15.412125)
+shape = SubResource("BoxShape3D_wedp3")
+
+[node name="parede frente" type="StaticBody3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.917088)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede frente" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 3.3374023, 15.412125)
+shape = SubResource("BoxShape3D_wedp3")
+
+[node name="parede lateral" type="StaticBody3D" parent="." index="8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 3.3140259, -0.06295776)
+shape = SubResource("BoxShape3D_dfae8")
+
+[node name="parede lateral2" type="StaticBody3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085342, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 3.3140259, -0.06295776)
+shape = SubResource("BoxShape3D_dfae8")
