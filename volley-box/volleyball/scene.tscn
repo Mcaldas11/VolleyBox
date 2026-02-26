@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl1rd8yq4viql"]
+[gd_scene load_steps=13 format=3 uid="uid://dl1rd8yq4viql"]
 
 [ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
 [ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
 [ext_resource type="PackedScene" uid="uid://csnwley7mf18u" path="res://assets/ball/ball.tscn" id="3_alxkw"]
+[ext_resource type="Script" uid="uid://bsnj23n8e38ct" path="res://volleyball/CrossHair.gd" id="4_wedp3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alxkw"]
 size = Vector3(9.000488, 1.0292969, 0.012084961)
@@ -22,10 +23,13 @@ height = 1.8
 [sub_resource type="Environment" id="Environment_r886b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wedp3"]
-size = Vector3(18.98407, 7.6748047, 0.09082031)
+size = Vector3(18.98407, 11.950195, 0.09082031)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dfae8"]
-size = Vector3(0.24647167, 7.6280518, 31.015198)
+size = Vector3(0.24647167, 16.529915, 31.015198)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fe1q0"]
+size = Vector3(19.432373, 0.27392578, 31.156773)
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_r886b")]
 
@@ -61,14 +65,8 @@ shape = SubResource("CylinderShape3D_wedp3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024425507, -0.12837218, -0.9748182)
 shape = SubResource("BoxShape3D_r886b")
 
-[node name="Player" parent="." index="1" instance=ExtResource("2_alxkw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
-speed = 6.0
-jump_velocity = 4.5
-mouse_sensitivity = 0.002
-ball_scene = ExtResource("3_alxkw")
-
-[node name="CrossHair" type="CanvasLayer" parent="." index="2"]
+[node name="CrossHair" type="CanvasLayer" parent="." index="1"]
+script = ExtResource("4_wedp3")
 
 [node name="Label" type="Label" parent="CrossHair" index="0"]
 anchors_preset = 8
@@ -84,6 +82,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 text = "+"
+
+[node name="PowerBar" type="TextureProgressBar" parent="CrossHair" index="1"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4
+
+[node name="Player" parent="." index="2" instance=ExtResource("2_alxkw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
+ball_scene = ExtResource("3_alxkw")
 
 [node name="Vareta1" type="Node3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.194227, 0, 0)
@@ -102,28 +110,36 @@ skeleton = NodePath("../../Vareta2")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
 environment = SubResource("Environment_r886b")
 
-[node name="parede costas" type="StaticBody3D" parent="." index="6"]
+[node name="parede1" type="StaticBody3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43434, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede costas" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 3.3374023, 15.412125)
 shape = SubResource("BoxShape3D_wedp3")
 
-[node name="parede frente" type="StaticBody3D" parent="." index="7"]
+[node name="parede2" type="StaticBody3D" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.917088)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede frente" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 3.3374023, 15.412125)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 5.4750977, 15.412125)
 shape = SubResource("BoxShape3D_wedp3")
 
 [node name="parede lateral" type="StaticBody3D" parent="." index="8"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 3.3140259, -0.06295776)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 4.366493, -0.06295776)
 shape = SubResource("BoxShape3D_dfae8")
 
 [node name="parede lateral2" type="StaticBody3D" parent="." index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085342, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 3.3140259, -0.06295776)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.781565, 6.6809998, -0.06071663)
 shape = SubResource("BoxShape3D_dfae8")
+
+[node name="teto" type="StaticBody3D" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.326491, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teto" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21618652, 7.042816, 0.01955223)
+shape = SubResource("BoxShape3D_fe1q0")
