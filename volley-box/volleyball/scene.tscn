@@ -15,6 +15,9 @@ radius = 0.036621094
 [sub_resource type="BoxShape3D" id="BoxShape3D_r886b"]
 size = Vector3(18.997292, 0.7432556, 31.10749)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wedp3"]
+bg_color = Color(0.99823964, 0, 0, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_r886b"]
 top_radius = 0.02
 bottom_radius = 0.02
@@ -83,11 +86,27 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 text = "+"
 
-[node name="PowerBar" type="TextureProgressBar" parent="CrossHair" index="1" unique_id=2111454078]
-custom_minimum_size = Vector2(120, 120)
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
+[node name="PowerBar" type="ProgressBar" parent="CrossHair" index="1" unique_id=1861412011]
+offset_left = 458.0
+offset_top = 535.0
+offset_right = 698.0
+offset_bottom = 562.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wedp3")
+min_value = 1.0
+max_value = 15.0
+value = 8.0
+show_percentage = false
+
+[node name="PowerText" type="Label" parent="CrossHair" index="2" unique_id=768876206]
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.15900001
+offset_left = 679.0
+offset_top = 537.0
+offset_right = 699.416
+offset_bottom = 482.968
+text = "8
+"
 
 [node name="Player" parent="." index="2" unique_id=1016416812 instance=ExtResource("2_alxkw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
