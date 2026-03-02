@@ -14,7 +14,7 @@ Planned for the future:
 
 ## 🛠️ Built With
 
-- 🌱 [Godot Engine 4.5](https://godotengine.org/)
+- 🌱 [Godot Engine 4.6](https://godotengine.org/)
 
 ---
 
