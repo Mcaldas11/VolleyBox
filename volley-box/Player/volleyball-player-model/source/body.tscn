@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bktc1t8abcy84"]
+
+[ext_resource type="PackedScene" uid="uid://cet2gg12wk50t" path="res://Player/volleyball-player-model/source/Body Low.fbx" id="1_o01ut"]
+
+[node name="Body Low" unique_id=618053182 instance=ExtResource("1_o01ut")]
