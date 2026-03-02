@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl1rd8yq4viql"]
+[gd_scene format=3 uid="uid://dl1rd8yq4viql"]
 
 [ext_resource type="PackedScene" uid="uid://bjmcqq1vwm3sw" path="res://volleyball/scene.gltf" id="1_r886b"]
 [ext_resource type="PackedScene" uid="uid://cjwa10xmt3sbl" path="res://Player/player.tscn" id="2_alxkw"]
@@ -31,7 +31,7 @@ size = Vector3(0.24647167, 16.529915, 31.015198)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fe1q0"]
 size = Vector3(19.432373, 0.27392578, 31.156773)
 
-[node name="Sketchfab_Scene" instance=ExtResource("1_r886b")]
+[node name="Sketchfab_Scene" unique_id=1834211508 instance=ExtResource("1_r886b")]
 
 [node name="Volleyball_Net" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode" index="0"]
 transform = Transform3D(-1, -3.6989065e-15, -8.742278e-08, 1.2246469e-16, 1, -4.371139e-08, 8.742278e-08, -4.371139e-08, -1, -0.023924112, 1.8429346, -0.008879576)
@@ -39,36 +39,36 @@ transform = Transform3D(-1, -3.6989065e-15, -8.742278e-08, 1.2246469e-16, 1, -4.
 [node name="Volleyball_Net_Volleyball_Net_0" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050889015, 0, -4.656613e-09)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net" index="2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net" index="2" unique_id=1171631595]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D" index="0" unique_id=1594540750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2529297, -0.0146484375, 0.00030516926)
 shape = SubResource("BoxShape3D_alxkw")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net" index="3"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net" index="3" unique_id=1303043299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7587028, 0, -4.172325e-07)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2" index="0" unique_id=1636500663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036978722, -0.5977783, 0)
 shape = SubResource("CylinderShape3D_wedp3")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2" index="1"]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2" index="1" unique_id=1306039216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.014063, 0, 8.745119e-07)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2/StaticBody3D3" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball_Net/StaticBody3D2/StaticBody3D3" index="0" unique_id=190295731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0036978722, -0.5977783, 0)
 shape = SubResource("CylinderShape3D_wedp3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0" index="0" unique_id=1540134988]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0/StaticBody3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/1144e7d4dd624ea3b0a2d8b261362a77_fbx/RootNode/Volleyball/Volleyball_Volleyball_0/StaticBody3D" index="0" unique_id=1650558606]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024425507, -0.12837218, -0.9748182)
 shape = SubResource("BoxShape3D_r886b")
 
-[node name="CrossHair" type="CanvasLayer" parent="." index="1"]
+[node name="CrossHair" type="CanvasLayer" parent="." index="1" unique_id=1475865184]
 script = ExtResource("4_wedp3")
 
-[node name="Label" type="Label" parent="CrossHair" index="0"]
+[node name="Label" type="Label" parent="CrossHair" index="0" unique_id=1468032063]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -83,63 +83,63 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 28
 text = "+"
 
-[node name="PowerBar" type="TextureProgressBar" parent="CrossHair" index="1"]
+[node name="PowerBar" type="TextureProgressBar" parent="CrossHair" index="1" unique_id=2111454078]
 custom_minimum_size = Vector2(120, 120)
 offset_right = 40.0
 offset_bottom = 40.0
 fill_mode = 4
 
-[node name="Player" parent="." index="2" instance=ExtResource("2_alxkw")]
+[node name="Player" parent="." index="2" unique_id=1016416812 instance=ExtResource("2_alxkw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96964526, 9.249031)
 ball_scene = ExtResource("3_alxkw")
 
-[node name="Vareta1" type="Node3D" parent="." index="3"]
+[node name="Vareta1" type="Node3D" parent="." index="3" unique_id=1167234941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.194227, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Vareta1" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vareta1" index="0" unique_id=1971217008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5317545, 2.2612882, -0.009531736)
 mesh = SubResource("CylinderMesh_r886b")
 
-[node name="Vareta2" type="Node3D" parent="." index="4"]
+[node name="Vareta2" type="Node3D" parent="." index="4" unique_id=905067184]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Vareta2" index="0"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vareta2" index="0" unique_id=1154986195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2439833, 2.2612882, -0.009531736)
 mesh = SubResource("CylinderMesh_r886b")
 skeleton = NodePath("../../Vareta2")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="5" unique_id=1460478013]
 environment = SubResource("Environment_r886b")
 
-[node name="parede1" type="StaticBody3D" parent="." index="6"]
+[node name="parede1" type="StaticBody3D" parent="." index="6" unique_id=1618596499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43434, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede1" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede1" index="0" unique_id=443912141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 3.3374023, 15.412125)
 shape = SubResource("BoxShape3D_wedp3")
 
-[node name="parede2" type="StaticBody3D" parent="." index="7"]
+[node name="parede2" type="StaticBody3D" parent="." index="7" unique_id=810967060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.917088)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede2" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede2" index="0" unique_id=2144447333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17495728, 5.4750977, 15.412125)
 shape = SubResource("BoxShape3D_wedp3")
 
-[node name="parede lateral" type="StaticBody3D" parent="." index="8"]
+[node name="parede lateral" type="StaticBody3D" parent="." index="8" unique_id=1278972542]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral" index="0" unique_id=740536762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.7808075, 4.366493, -0.06295776)
 shape = SubResource("BoxShape3D_dfae8")
 
-[node name="parede lateral2" type="StaticBody3D" parent="." index="9"]
+[node name="parede lateral2" type="StaticBody3D" parent="." index="9" unique_id=602442774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.085342, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral2" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parede lateral2" index="0" unique_id=1356477391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.781565, 6.6809998, -0.06071663)
 shape = SubResource("BoxShape3D_dfae8")
 
-[node name="teto" type="StaticBody3D" parent="." index="10"]
+[node name="teto" type="StaticBody3D" parent="." index="10" unique_id=1527738375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.326491, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="teto" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="teto" index="0" unique_id=402701453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21618652, 7.042816, 0.01955223)
 shape = SubResource("BoxShape3D_fe1q0")
