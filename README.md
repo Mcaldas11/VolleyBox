@@ -21,7 +21,7 @@ Planned for the future:
 ## 🚀 Getting Started (Run the Project)
 
 ### ✅ Requirements
-- 🌱 Godot **4.5**
+- 🌱 Godot **4.6**
 - 🧰 Git
 
 ### ▶️ Run Locally
