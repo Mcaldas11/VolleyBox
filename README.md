@@ -1,6 +1,6 @@
 # 🏐 VolleyBox
 
-**VolleyBox** is a **2v2 volleyball game** in development, built with **Godot Engine 4.5** 🎮✨
+**VolleyBox** is a **2v2 volleyball game** in development, built with **Godot Engine 4.6** 🎮✨
 
 Current focus:
 - 🤖 **Single-player vs AI**
