@@ -29,7 +29,7 @@ Planned for the future:
    ```bash
    git clone https://github.com/Mcaldas11/VolleyBox.git
    ```
-2. Open **Godot 4.5**
+2. Open **Godot 4.6**
 3. Click **Import** and select the project folder (or `project.godot`)
 4. Press **Play** in the editor 🎬
 
