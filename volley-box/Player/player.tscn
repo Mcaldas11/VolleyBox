@@ -1,34 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjwa10xmt3sbl"]
+[gd_scene format=3 uid="uid://cjwa10xmt3sbl"]
 
 [ext_resource type="Script" uid="uid://bvd5nq7l4p1t5" path="res://Player/Script_Player/player.gd" id="1_674bt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mip4"]
+radius = 0.51953125
+height = 2.1340332
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_insbl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l8h54"]
 radius = 2.0
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=325684896]
 script = ExtResource("1_674bt")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1899514533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0025634766, 0)
 shape = SubResource("CapsuleShape3D_3mip4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=511326804]
 mesh = SubResource("CapsuleMesh_insbl")
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1711280567]
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=625625829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.775, 0)
 current = true
 fov = 65.0
 
-[node name="SpawnPoint" type="Node3D" parent="."]
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=927205379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1164161, -0.6784137)
 
-[node name="HitBox" type="Area3D" parent="."]
+[node name="HitBox" type="Area3D" parent="." unique_id=1003758332]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox" unique_id=1457312927]
 shape = SubResource("SphereShape3D_l8h54")

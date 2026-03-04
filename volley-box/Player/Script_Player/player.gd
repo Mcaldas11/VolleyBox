@@ -136,21 +136,32 @@ func _input(event):
 			# SPIKE (no ar)
 			if not is_on_floor():
 
-				var spike_impulse = forward * spike_force * power_multiplier +Vector3.UP * spike_force * power_multiplier * 0.35
+				var target = get_crosshair_target()
+
+				var direction = (target - current_ball.global_position).normalized()
+
+				var spike_impulse = ball_scene * spike_force * power
 
 				current_ball.apply_central_impulse(spike_impulse)
-
-				print("SPIKE power:", power)
 
 
 			# MANCHE TE (no chão)
 			else:
 
-				var bump_impulse = forward * bump_force * power_multiplier + Vector3.UP * bump_force * power_multiplier * 0.45
+				var target = get_crosshair_target()
+				var direction = (target - current_ball.global_position).normalized()
+
+				# Quanto menor o power, mais sobe
+				var vertical_factor = float(max_power - power) / max_power
+
+				# controla intensidade da parábola
+				var vertical_boost = vertical_factor * 6.0
+
+				var bump_impulse = direction * bump_force * power + Vector3.UP * vertical_boost
 
 				current_ball.apply_central_impulse(bump_impulse)
 
-				print("MANCHE TE power:", power)
+				print("MANCHE TE  | power:", power)
 
 
 # =====================
@@ -234,3 +245,21 @@ func _physics_process(delta):
 func _on_ball_deleted():
 
 	current_ball = null
+
+func get_crosshair_target():
+
+	var space_state = get_world_3d().direct_space_state
+	
+	var from = camera.global_transform.origin
+	var to = from + (-camera.global_transform.basis.z * 200)
+
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	query.exclude = [self]
+
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		return result.position
+	else:
+		return to
+		
