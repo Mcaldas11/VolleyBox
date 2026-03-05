@@ -137,10 +137,9 @@ func _input(event):
 			if not is_on_floor():
 
 				var target = get_crosshair_target()
-
 				var direction = (target - current_ball.global_position).normalized()
 
-				var spike_impulse = ball_scene * spike_force * power
+				var spike_impulse = direction * spike_force * power
 
 				current_ball.apply_central_impulse(spike_impulse)
 
